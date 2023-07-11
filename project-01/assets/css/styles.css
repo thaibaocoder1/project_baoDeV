@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-block {
+  width: 900px;
+}
+.form-heading {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #0a6ebd;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.form {
+  width: 650px;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: #fff;
+  box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.form-group input {
+  display: block;
+  width: 100%;
+  padding: 1.2rem;
+  border: 0;
+  border: 1px solid #0a6ebd;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  color: #333;
+  font-family: inherit;
+}
+.form-group input:focus {
+  outline: none;
+}
+.form-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  color: #444;
+  transition: all 0.3s ease-in-out;
+}
+.form-group input:not(:placeholder-shown) + .form-label,
+.form-group input:focus + .form-label {
+  top: 0;
+  transform: translateY(-50%);
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 8px;
+}
+.icon-error,
+.icon-success {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.8rem;
+  z-index: 1;
+}
+.form-group.success .icon-success {
+  color: #64ccc5;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+.form-group.error .icon-error {
+  color: #f24c3d;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+.form-submit {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  border: 1px solid #0a6ebd;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #0a6ebd;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.form-small {
+  color: #f24c3d;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+.form-group.error .form-small {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
